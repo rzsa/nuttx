@@ -42,7 +42,7 @@ The WeAct STM32H750 has 1 software controllable LED.
 UART/USART
 ==========
 
-The WeAct STM32H750 used the USART1 for serial debug messages.
+The WeAct STM32H750 uses the USART1 for serial debug messages.
 
 USART1
 ------
@@ -79,7 +79,7 @@ The WeAct STM32H750 has one SDCard slot connected as below:
 ==============
 
 Each weact-stm32h750 configuration is maintained in a sub-directory and
-can be selected as follow::
+can be selected as follows::
 
   ./tools/configure.sh weact-stm32h750:<subdir>
 
@@ -89,7 +89,7 @@ Flashing
 ========
 
 This board can be flashed/programmed via DFU or SWD. The DFU is an alternative
-when you don't have a SWD programmer, but SWD offer more than flashing: you can
+when you don't have a SWD programmer, but SWD offers more than flashing: you can
 use it for code debugging with GDB. So it is recommended that you have a SWD
 tool on your workbench.
 
@@ -196,7 +196,7 @@ Then run this command in the same directory where your nuttx.bin is located::
      Info : 2714 4889 server.c:359 add_service(): Listening on port 6666 for tcl connections
      Info : 2715 4889 server.c:359 add_service(): Listening on port 4444 for telnet connections
 
-After you got the message "wrote xxxxxx bytes from file nuttx.bin" you can press Ctrl+C (``^C``) to finish the application. Now you can reset the board and get access to the NSH terminal.
+After you get the message "wrote xxxxxx bytes from file nuttx.bin" you can press Ctrl+C (``^C``) to finish the application. Now you can reset the board and get access to the NSH terminal.
 
 ==============
 
@@ -227,7 +227,7 @@ After flashing and reboot your board you should see in your dmesg logs::
        [ 2639.074886] usbcore: registered new interface driver cdc_acm
        [ 2639.074887] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
 
-You may need to press **ENTER** 3 times before the NSH show up.
+You may need to press **ENTER** 3 times before the NSH shows up.
 
 sdcard
 ------
