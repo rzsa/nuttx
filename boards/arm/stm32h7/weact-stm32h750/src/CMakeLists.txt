@@ -34,8 +34,16 @@ if(CONFIG_VIDEO_FB)
   endif()
 endif()
 
+if(CONFIG_STM32H7_SPI)
+  list(APPEND SRCS stm32_spi.c)
+endif()
+
 if(CONFIG_STM32H7_SDMMC)
   list(APPEND SRCS stm32_sdmmc.c)
+endif()
+
+if(CONFIG_STM32H7_OTGFS)
+  list(APPEND SRCS stm32_usb.c)
 endif()
 
 if(CONFIG_FAT_DMAMEMORY)
@@ -44,9 +52,14 @@ endif()
 
 if(CONFIG_BOARDCTL)
   list(APPEND SRCS stm32_appinitialize.c)
+  if(CONFIG_BOARDCTL_IOCTL)
+    list(APPEND SRCS stm32_ioctl.c)
+  endif()
 endif()
 
 target_sources(board PRIVATE ${SRCS})
+
+set_property(GLOBAL PROPERTY LD_SCRIPT "${NUTTX_BOARD_DIR}/scripts/flash.ld")
 
 if(NOT CONFIG_BUILD_FLAT)
   add_subdirectory(${NUTTX_BOARD_DIR}/kernel)
